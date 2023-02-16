@@ -22,13 +22,6 @@ class Board extends React.Component {
 
   render() {
     let size = this.props.state.history.squares.length();
-    let items = [];
-    for (let index = 0; index < size; ) {
-      for (let jindex = 0; jindex < 3; jindex++) {
-        items.push(this.renderSquare(i++));
-      }
-    }
-
     return (
       <div>
         <div className="board-row">
@@ -114,11 +107,15 @@ class Game extends React.Component {
     if (!squares[i]) {
       squares[i] = this.state.xIsNext ? "X" : "O";
       this.setState({
-        history: history.concat([{ squares: squares }]),
+        history: history.concat([
+          {
+            squares: squares,
+            col: col,
+            row: row,
+          },
+        ]),
         xIsNext: !this.state.xIsNext,
         stepNumber: history.length,
-        col: col,
-        row: row,
       });
     }
   }
