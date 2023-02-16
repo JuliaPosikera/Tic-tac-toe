@@ -37,15 +37,40 @@ ul {
   outline: none;
 }
 
-.kbd-navigation .square:focus {
-  background: #ddd;
+.square:hover {
+  background: #88b7c9;
 }
 
 .game {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-content: space-evenly;
 }
 
 .game-info {
+  display: inline-block;
   margin-left: 20px;
+  margin-right: 20px;
+}
+
+.game-board {
+  display: inline-block;
+}
+
+li {
+  list-style-type: none;
+  margin-top: 5px;
+  padding: 0px;
+}
+
+li > button {
+  width: 150px;
+}
+
+li > button:hover {
+  background-color: aquamarine;
+}
+
+ol {
+  padding: 0px;
 }
